@@ -11,6 +11,9 @@ export const DetailsWrapper = Styled.div`
   @media (min-width: 320px) and (max-width: 480px) {
     padding: 0.1rem;
   }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding: 0.2rem;
+  }
   height: 100%;
 `;
 

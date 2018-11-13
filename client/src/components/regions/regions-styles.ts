@@ -14,6 +14,10 @@ export const List = Styled.ul`
   @media (min-width: 320px) and (max-width: 480px) {
     padding: 0.5rem 0;
   }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding: 0.5rem 0;
+    /* justify-content: flex-start; */
+  }
 `;
 
 export const ListPosed = Posed(List)({
