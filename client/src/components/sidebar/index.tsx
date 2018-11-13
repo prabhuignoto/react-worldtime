@@ -31,7 +31,7 @@ const Favorites: React.SFC<IFavorites> = ({ favorites, handleSelection }) => {
   return (
     <FavoriteWrapper>
       {favorites.map((favorite: string) => (
-        <FavoriteEntry name={favorite} handleSelection={handleSelection} />
+        <FavoriteEntry name={favorite} handleSelection={handleSelection}  key={favorite}/>
       ))}
     </FavoriteWrapper>
   );

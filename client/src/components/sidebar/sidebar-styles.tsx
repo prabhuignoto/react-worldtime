@@ -38,10 +38,13 @@ export const SideBar = styled.section`
   left: 0;
   bottom: 0;
   height: 100%;
-  width: 50%;
   background: #fff;
   box-shadow: 2px 0px 5px 1px rgba(0, 0, 0, 0.35);
   z-index: 999;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    width: 70%;
+  }
 
   h1 {
     font-size: 2rem;
@@ -50,7 +53,7 @@ export const SideBar = styled.section`
 `;
 
 export const PosedSidebar = Posed(SideBar)({
-  open: { width: "50%", delayChildren: 200, staggerChildren: 50 },
+  open: { width: "350px", delayChildren: 200, staggerChildren: 50 },
   closed: { width: "0px" }
 });
 
