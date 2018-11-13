@@ -29,15 +29,17 @@ class App extends Component<{}, { fontsLoaded: boolean }> {
   render() {
     return (
       <section className="App">
-        <Header />
         {this.state.fontsLoaded ? (
-          <div className="app-main">
-            <Regions />
-            <Timezones />
-            <Details />
-          </div>
+          <Fragment>
+            <Header />
+            <div className="app-main">
+              <Regions />
+              <Timezones />
+              <Details />
+            </div>
+            <Footer />
+          </Fragment>
         ) : null}
-        <Footer />
       </section>
     );
   }
