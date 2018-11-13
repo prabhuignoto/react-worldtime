@@ -24,7 +24,7 @@ export const ListLabel = Styled.div`
   cursor: pointer;
   width: 100%;
   background: rgba(0, 128, 255, 0.03);
-  color: #000;
+  color: #007FFE;
   box-shadow: inset 0 0 20px 5px rgba(0, 128, 255, 0.058);
 `;
 

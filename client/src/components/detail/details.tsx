@@ -19,12 +19,12 @@ var ordinal = require("ordinal");
 const getFormattedDatetimeSimple = (date: string, timezone: string) =>
   LuxonDateTime.fromISO(date, {
     zone: timezone
-  }).toLocaleString(LuxonDateTime.TIME_SIMPLE);
+  }).toLocaleString(LuxonDateTime.DATETIME_SHORT);
 
 const getFormattedDatetimeFull = (date: string, timezone: string) =>
   LuxonDateTime.fromISO(date, {
     zone: timezone
-  }).toLocaleString(LuxonDateTime.TIME_WITH_LONG_OFFSET);
+  }).toLocaleString(LuxonDateTime.DATETIME_HUGE);
 
 const Details: React.SFC<IDetail> = ({
   datetime,
@@ -56,8 +56,7 @@ const Details: React.SFC<IDetail> = ({
           ) : (
             <React.Fragment>
               <span>
-                It's {getFormattedDatetimeSimple(datetime, timezone)} in{" "}
-                {timezone}
+                It's {getFormattedDatetimeSimple(datetime, timezone)}
               </span>
               <a href="javascript:void(0);" onClick={toggle}>
                 show more

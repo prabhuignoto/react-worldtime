@@ -16,13 +16,17 @@ import { FormEvent } from "react";
 import { stat } from "fs";
 import { ReactComponent as AngleUp } from "../../assets/angle-up.svg";
 import { ReactComponent as AngleDown } from "../../assets/angle-down.svg";
+import SidebarState from "../sidebar/sidebarState";
+import { Subscribe } from "unstated";
 
 const Timezones: React.SFC<ITimezonesUI> = ({ zones, handleSelection }) => (
   // toggle power-plug
   <Toggle>
     {({ on, toggle }) => (
       // state power-plug
-      <State initial={{ label: "Select a Timezone", localZones: zones.slice(0) }}>
+      <State
+        initial={{ label: "Select a Timezone", localZones: zones.slice(0) }}
+      >
         {({ state, setState }) => {
           // updates the selection made passes the value up the tree
           const _handleSelection = (name: string) => {
@@ -45,36 +49,43 @@ const Timezones: React.SFC<ITimezonesUI> = ({ zones, handleSelection }) => (
             });
           };
           return (
+            <Subscribe to={[SidebarState]}>
+              {(sidebarState: SidebarState) => (
+                <ListWrapper>
+                  {/* label */}
+                  <PosedListLabel onClick={toggle}>
+                    <span>{state.label}</span>
+                    <Icon>{on ? <AngleUp /> : <AngleDown />}</Icon>
+                  </PosedListLabel>
+                  {/* toggle the list control */}
+                  {on ? (
+                    // list content starts
+                    <PosedListContainer pose={"open"} initialPose={"close"}>
+                      <List>
+                        <ListItem
+                          nohover
+                          style={{
+                            padding: "0.1rem 0rem",
+                            display: "flex",
+                            justifyContent: "center"
+                          }}
+                        >
+                          <Searchbox type="text" onInput={filterSearch} />
+                        </ListItem>
+                        {/* render the Timezone items */}
+                        {state.localZones.map((zone: ITimezone) => (
+                          <Timezone
+                            {...zone}
+                            handleSelection={_handleSelection}
+                          />
+                        ))}
+                      </List>
+                    </PosedListContainer>
+                  ) : null}
+                </ListWrapper>
+              )}
+            </Subscribe>
             // list control starts
-            <ListWrapper>
-              {/* label */}
-              <PosedListLabel onClick={toggle}>
-                <span>{state.label}</span>
-                <Icon>{on ? <AngleUp /> : <AngleDown />}</Icon>
-              </PosedListLabel>
-              {/* toggle the list control */}
-              {on ? (
-                // list content starts
-                <PosedListContainer pose={"open"} initialPose={"close"}>
-                  <List>
-                    <ListItem
-                      nohover
-                      style={{
-                        padding: "0.1rem 0rem",
-                        display: "flex",
-                        justifyContent: "center"
-                      }}
-                    >
-                      <Searchbox type="text" onInput={filterSearch} />
-                    </ListItem>
-                    {/* render the Timezone items */}
-                    {state.localZones.map((zone: ITimezone) => (
-                      <Timezone {...zone} handleSelection={_handleSelection} />
-                    ))}
-                  </List>
-                </PosedListContainer>
-              ) : null}
-            </ListWrapper>
           );
         }}
       </State>

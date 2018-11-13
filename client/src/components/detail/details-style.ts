@@ -12,7 +12,7 @@ export const DetailsWrapper = Styled.div`
     padding: 0.1rem;
   }
   @media (min-width: 768px) and (max-width: 1024px) {
-    padding: 0.2rem;
+    padding: 0.2rem; 
   }
   height: 100%;
 `;
@@ -30,13 +30,13 @@ export const DST = Styled.div`
 `;
 
 export const DateTime = Styled.div`
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #0080FF;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   margin-top: 1rem;
   text-align: left;
 
@@ -50,7 +50,7 @@ export const DateTime = Styled.div`
 
   a {
     margin-left: 0.5rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-decoration: none;
     color: rgba(0,0,0,0.7);
     font-weight: 600;

@@ -1,6 +1,9 @@
 import * as React from "react";
 import Styled from "styled-components";
 import { ReactComponent as Globe } from "../assets/globe.svg";
+import { ReactComponent as Bars } from "../assets/bars.svg";
+import { Subscribe } from "unstated";
+import SidebarState from "./sidebar/sidebarState";
 
 const Header = Styled.header`
   display: flex;
@@ -21,9 +24,9 @@ const Logo = Styled.i`
   position: relative;
   margin-left: auto;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
 `;
 
 const Icon = Styled.i`
@@ -34,10 +37,30 @@ const Icon = Styled.i`
   margin-left: 0.25rem;
 `;
 
+const Burger = Styled.i`
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  align-self: flex-start;
+  cursor: pointer;
+`;
+
 export default () => (
   <Header>
+    <Subscribe to={[SidebarState]}>
+      {(stateCntr: SidebarState) => {
+        return (
+          <Burger onClick={() => {
+            stateCntr.toggleSidebar();
+          }}>
+            <Bars />
+          </Burger>
+        );
+      }}
+    </Subscribe>
     <Logo>
-      <span>Worldtime</span>
+      <span>WorldTime</span>
       <Icon>
         <Globe />
       </Icon>

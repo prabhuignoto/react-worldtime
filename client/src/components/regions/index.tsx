@@ -1,8 +1,10 @@
 import { State } from "react-powerplug";
 import * as React from "react";
-import { ListPosed, ListItem, Icon } from "./regions-styles";
+import { ListPosed } from "./regions-styles";
 import { IRegionsUI, IRegionUI, IRegion } from "./IRegions";
 import Region from "./region";
+import SidebarState from "../sidebar/sidebarState";
+import { Subscribe } from "unstated";
 
 const updateSelection = (items: IRegionUI[], name: string) =>
   items.map((item: IRegionUI) => {
@@ -16,31 +18,49 @@ const updateSelection = (items: IRegionUI[], name: string) =>
   });
 
 const Regions: React.SFC<IRegionsUI> = ({ regions, onSelection }) => {
-  const regionsStart = regions.map(reg =>
-    Object.assign({}, reg, { selected: false })
-  );
   return (
-    <State initial={{ items: regionsStart }}>
-      {({ state, setState }) => {
-        const toggleSelection = (name: string) => {
-          setState({
-            items: updateSelection(state.items, name)
-          });
-          onSelection(name);
-        };
+    <Subscribe to={[SidebarState]}>
+      {(sidebarState: SidebarState) => {
+        const regionsStart = regions.map(reg => {
+          let favRegion: string = sidebarState.state.selectedFavorite
+            .split("/")
+            .shift() as string;
+          let selected = false;
+          if (favRegion.toLowerCase() === reg.name.toLowerCase()) {
+            selected = true;
+          }
+          return Object.assign({}, reg, { selected });
+        });
         return (
-          <ListPosed pose={'open'} initialPose={'close'}className="regions">
-            {state.items.map(region => (
-              <Region
-                name={region.name}
-                handleSelection={toggleSelection}
-                selected={region.selected}
-              />
-            ))}
-          </ListPosed>
+          <State initial={{ items: regionsStart }}>
+            {({ state, setState }) => {
+              const toggleSelection = (name: string) => {
+                setState({
+                  items: updateSelection(state.items, name)
+                });
+                onSelection(name);
+              };
+              return (
+                <ListPosed
+                  pose={"open"}
+                  initialPose={"close"}
+                  className="regions"
+                >
+                  {state.items.map(region => (
+                    <Region
+                      name={region.name}
+                      handleSelection={toggleSelection}
+                      selected={region.selected}
+                      key={region.name}
+                    />
+                  ))}
+                </ListPosed>
+              );
+            }}
+          </State>
         );
       }}
-    </State>
+    </Subscribe>
   );
 };
 

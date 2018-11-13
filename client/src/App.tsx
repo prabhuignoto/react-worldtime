@@ -6,6 +6,8 @@ import Details from "./components/detail";
 import WebfontLoader from "webfontloader";
 import Footer from "./components/footer";
 import Header from "./components/header";
+import Favorite from "./components/favorite";
+import Sidebar from "./components/sidebar";
 
 class App extends Component<{}, { fontsLoaded: boolean }> {
   constructor(props: any) {
@@ -32,9 +34,11 @@ class App extends Component<{}, { fontsLoaded: boolean }> {
         {this.state.fontsLoaded ? (
           <Fragment>
             <Header />
+            <Sidebar />
             <div className="app-main">
               <Regions />
               <Timezones />
+              <Favorite />
               <Details />
             </div>
             <Footer />
