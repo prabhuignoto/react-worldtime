@@ -24,4 +24,4 @@ const Server = new ApolloServer({
 
 Server.applyMiddleware({ app });
 
-app.listen(9000, () => console.log(`API Started and Running @ 9000`));
+app.listen(process.env.PORT || 9000, () => console.log(`API Started and Running`));
