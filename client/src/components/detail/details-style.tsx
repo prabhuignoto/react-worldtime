@@ -31,7 +31,7 @@ export const DST = Styled.div`
 `;
 
 export const DateTime = Styled.div`
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #0080FF;
   display: flex;
@@ -77,7 +77,7 @@ export const Label = Styled.span`
 `;
 
 export const Fact = Styled.div`
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: normal;
   padding: 2rem 0;
   padding-left: 0.5rem;
