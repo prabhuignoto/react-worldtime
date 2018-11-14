@@ -42,8 +42,8 @@ export const DateTime = Styled.div`
   text-align: left;
 
   i {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
     @media (min-width: 320px) and (max-width: 480px) {
       display: none;
     }

@@ -1,5 +1,6 @@
 export interface IRegion {
   name: string;
+  selected: boolean;
 }
 
 export interface IRegionUI extends IRegion {

@@ -3,8 +3,8 @@ import Posed from "react-pose";
 
 export const CloseIcon = styled.i`
   display: block;
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   position: absolute;
   top: 1rem;
   right: 1rem;

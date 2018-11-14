@@ -56,7 +56,7 @@ const Details: React.SFC<IDetail> = ({
           ) : (
             <React.Fragment>
               <span>
-                It's {getFormattedDatetimeSimple(datetime, timezone)}
+                It's {getFormattedDatetimeSimple(datetime, timezone)} in {timezone}
               </span>
               <a href="javascript:void(0);" onClick={toggle}>
                 show more
@@ -71,7 +71,7 @@ const Details: React.SFC<IDetail> = ({
         <Calendar />
       </Icon>
       <span>
-        We are in <Mark>{ordinal(week_number)}</Mark> week of this year.
+        We are in the <Mark>{ordinal(week_number)}</Mark> week of this year.
       </span>
     </Fact>
     <Fact>
