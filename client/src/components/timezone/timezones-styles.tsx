@@ -69,7 +69,18 @@ export const ListContainer = Styled.div`
     min-height: 150px;
     max-height: 250px;
   }
-
+  @media (min-width: 768px) and (max-width: 1024px) {
+    min-height: 300px;
+    max-height: 350px;
+  }
+  @media (min-width: 1281px) {
+    min-height: 300px;
+    max-height: 350px;
+  }
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    min-height: 250px;
+    max-height: 280px;
+  }
 `;
 
 export const PosedListContainer = Posed(ListContainer)({
