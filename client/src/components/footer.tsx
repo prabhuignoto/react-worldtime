@@ -17,11 +17,11 @@ const Footer = Styled.footer`
     padding: 1rem 0;
   }
   @media (min-width: 768px) and (max-width: 1024px) {
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
     left: 0;
     padding: 1rem 0;
-    padding-right: 1rem;
+    padding-right: 1rem; */
   }
 `;
 
