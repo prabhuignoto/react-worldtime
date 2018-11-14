@@ -5,7 +5,7 @@ import gql from "graphql-tag";
 import * as React from "react";
 import Details from "./details";
 import { Loading } from "./details-style";
-import { ReactComponent as LoadingAnime } from "../../assets/loading.svg";
+import { ReactComponent as LoadingAnime } from "../../assets/loading-2.svg";
 
 const query = gql`
   query getData($timeZone: String!) {
