@@ -110,8 +110,8 @@ export const Mark = Styled.span`
 export const Unix = Styled.div``;
 
 export const Loading = Styled.i`
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   display: block;
   position: absolute;
   left: 0;
@@ -120,4 +120,18 @@ export const Loading = Styled.i`
   margin-right: auto;
   top: 40%;
   transform: translateY(-40%);
+  background: rgba(0,0,0,0.05);
+  border-radius: 4px;
+
+  svg {
+    height: 70%;
+    width: 70%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 `

@@ -53,7 +53,16 @@ const Timezones: React.SFC<ITimezonesUI> = ({ zones, handleSelection }) => (
               {(sidebarState: SidebarState) => (
                 <ListWrapper>
                   {/* label */}
-                  <PosedListLabel onClick={toggle}>
+                  <PosedListLabel
+                    onClick={() => {
+                      if (on) {
+                        setState({
+                          localZones: zones.slice(0)
+                        });
+                      }
+                      toggle();
+                    }}
+                  >
                     <span>{state.label}</span>
                     <Icon>{on ? <AngleUp /> : <AngleDown />}</Icon>
                   </PosedListLabel>
