@@ -4,6 +4,7 @@ import { ListPosed } from "./regions-styles";
 import { IRegionsUI, IRegionUI, IRegion } from "./IRegions";
 import Region from "./region";
 import SidebarState from "../sidebar/sidebarState";
+import TimezoneState from "../timezone/timezoneState";
 import { Subscribe } from "unstated";
 
 const updateSelection = (items: IRegionUI[], name: string) =>
@@ -19,8 +20,8 @@ const updateSelection = (items: IRegionUI[], name: string) =>
 
 const Regions: React.SFC<IRegionsUI> = ({ regions, onSelection }) => {
   return (
-    <Subscribe to={[SidebarState]}>
-      {(sidebarState: SidebarState) => {
+    <Subscribe to={[SidebarState, TimezoneState]}>
+      {(sidebarState: SidebarState, timezoneState: TimezoneState) => {
         const regionsStart = regions.map(reg => {
           let favRegion: string = sidebarState.state.selectedFavorite
             .split("/")
@@ -39,6 +40,7 @@ const Regions: React.SFC<IRegionsUI> = ({ regions, onSelection }) => {
                   items: updateSelection(state.items, name)
                 });
                 onSelection(name);
+                timezoneState.setActiveTimezone('');
               };
               return (
                 <ListPosed

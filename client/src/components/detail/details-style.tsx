@@ -12,10 +12,10 @@ export const DetailsWrapper = Styled.div`
     padding: 0.1rem;
   }
   @media (min-width: 768px) and (max-width: 1024px) {
-    /* padding: 0.2rem; */
     width: 90%;
   }
-  height: 100%;
+  min-height: 500px;
+  /* height: 100%; */
 `;
 
 export const PosedDetailsWrapper = Posed(DetailsWrapper)({
