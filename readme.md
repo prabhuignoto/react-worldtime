@@ -1,4 +1,4 @@
-# react-worldtime
+# :clock10: react-worldtime
 
 ![[Build Status][travis-url]][travis-url] ![[Maintainability][cc-url]][cc-image]
 > Know your Timezones better.
