@@ -1,6 +1,7 @@
 import { Subscribe } from "unstated";
 import { Query } from "react-apollo";
 import timezoneState from "../timezone/timezoneState";
+import MainState from "../common/mainState";
 import gql from "graphql-tag";
 import * as React from "react";
 import Details from "./details";
@@ -23,13 +24,18 @@ const query = gql`
 `;
 
 export default () => (
-  <Subscribe to={[timezoneState]}>
-    {({ state }: timezoneState) => {
+  <Subscribe to={[timezoneState, MainState]}>
+    {(timezoneState: timezoneState, mainState: MainState) => {
+      console.log(timezoneState.state);
       return (
         <Query
           query={query}
-          variables={{ timeZone: state.activeTimezone }}
-          skip={state.activeTimezone === ""}
+          variables={{
+            timeZone:
+              timezoneState.state.activeTimezone ||
+              mainState.state.defaultTimezone
+          }}
+          // skip={timezoneState.state.activeTimezone === ""}
         >
           {({ loading, data, error }) => {
             let view = null;

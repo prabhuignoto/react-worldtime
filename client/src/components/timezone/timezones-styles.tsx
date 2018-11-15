@@ -74,12 +74,10 @@ export const ListContainer = Styled.div`
     max-height: 350px;
   }
   @media (min-width: 1281px) {
-    min-height: 300px;
-    max-height: 350px;
+    max-height: 550px;
   }
   @media (min-width: 1025px) and (max-width: 1280px) {
-    min-height: 250px;
-    max-height: 280px;
+    max-height: 300px;
   }
 `;
 

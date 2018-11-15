@@ -33,7 +33,6 @@ export const DST = Styled.div`
 export const DateTime = Styled.div`
   font-size: 1.2rem;
   font-weight: 600;
-  color: #0080FF;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -42,8 +41,8 @@ export const DateTime = Styled.div`
   text-align: left;
 
   i {
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 2rem;
+    height: 2rem;
     @media (min-width: 320px) and (max-width: 480px) {
       display: none;
     }
@@ -68,6 +67,12 @@ export const DateTime = Styled.div`
     }
   }
 `;
+
+export const Time = Styled.time`
+  font-size: 1.25rem;
+  color: #0080FF;
+  margin: 0 0.25rem;
+`
 
 export const Label = Styled.span`
   font-size: 1.2rem;
@@ -110,22 +115,21 @@ export const Mark = Styled.span`
 export const Unix = Styled.div``;
 
 export const Loading = Styled.i`
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   display: block;
   position: absolute;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  top: 40%;
-  transform: translateY(-40%);
-  background: rgba(0,0,0,0.05);
+  top: 50%;
+  transform: translateY(-50%);
   border-radius: 4px;
 
   svg {
-    height: 70%;
-    width: 70%;
+    height: 80%;
+    width: 80%;
     position: absolute;
     left: 0;
     right: 0;

@@ -4,6 +4,7 @@ import {
   PosedDetailsWrapper,
   DST,
   DateTime,
+  Time,
   Fact,
   Icon,
   Mark
@@ -19,7 +20,7 @@ var ordinal = require("ordinal");
 const getFormattedDatetimeSimple = (date: string, timezone: string) =>
   LuxonDateTime.fromISO(date, {
     zone: timezone
-  }).toLocaleString(LuxonDateTime.DATETIME_SHORT);
+  }).toLocaleString(LuxonDateTime.TIME_SIMPLE);
 
 const getFormattedDatetimeFull = (date: string, timezone: string) =>
   LuxonDateTime.fromISO(date, {
@@ -46,8 +47,7 @@ const Details: React.SFC<IDetail> = ({
           return on ? (
             <React.Fragment>
               <span>
-                It's {getFormattedDatetimeFull(datetime, timezone)}
-                {/* {timezone} */}
+                {getFormattedDatetimeFull(datetime, timezone)}
               </span>
               <a href="javascript:void(0);" onClick={toggle}>
                 show less
@@ -56,7 +56,9 @@ const Details: React.SFC<IDetail> = ({
           ) : (
             <React.Fragment>
               <span>
-                It's {getFormattedDatetimeSimple(datetime, timezone)} in {timezone}
+                It's <Time>
+                  {getFormattedDatetimeSimple(datetime, timezone)}
+                </Time> in {timezone}
               </span>
               <a href="javascript:void(0);" onClick={toggle}>
                 show more

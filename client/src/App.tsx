@@ -8,6 +8,8 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import Favorite from "./components/favorite";
 import Sidebar from "./components/sidebar";
+import MainState from "./components/common/mainState";
+import { Subscribe } from "unstated";
 
 class App extends Component<{}, { fontsLoaded: boolean }> {
   constructor(props: any) {
@@ -30,21 +32,27 @@ class App extends Component<{}, { fontsLoaded: boolean }> {
   }
   render() {
     return (
-      <section className="App">
-        {this.state.fontsLoaded ? (
-          <Fragment>
-            <Header />
-            <Sidebar />
-            <div className="app-main">
-              <Regions />
-              <Timezones />
-              <Favorite />
-              <Details />
-            </div>
-            <Footer />
-          </Fragment>
-        ) : null}
-      </section>
+      <Subscribe to={[MainState]}>
+        {(mainStateContainer: MainState) => (
+          <section className="App">
+            {this.state.fontsLoaded ? (
+              <Fragment>
+                <Header />
+                <Sidebar />
+                <div className="app-main">
+                  <Regions
+                    defaultRegion={mainStateContainer.state.defaultRegion}
+                  />
+                  <Timezones />
+                  <Favorite />
+                  <Details />
+                </div>
+                <Footer />
+              </Fragment>
+            ) : null}
+          </section>
+        )}
+      </Subscribe>
     );
   }
 }

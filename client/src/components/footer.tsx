@@ -36,13 +36,13 @@ const Social = Styled.ul`
 `;
 
 const SocialLink = Styled.li`
-  width: 1.25rem;
-  height: 1.25rem;
-  margin: 0 0.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0 0.75rem;
 
   a {
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     position: relative;
     display: block;
   }

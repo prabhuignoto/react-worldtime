@@ -14,4 +14,5 @@ export interface IRegionState {
 export interface IRegionsUI {
   regions: IRegion[];
   onSelection: (name: string) => void;
+  defaultRegion: string;
 }
