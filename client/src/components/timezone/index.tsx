@@ -35,7 +35,7 @@ export default () => (
       <Query
         query={query}
         variables={{ name: state.selectedRegion }}
-        skip={state.selectedRegion === ""}
+        // skip={state.selectedRegion === ""}
         fetchPolicy={"cache-and-network"}
       >
         {({ loading, data, error }) => {

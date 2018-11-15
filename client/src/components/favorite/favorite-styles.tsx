@@ -5,13 +5,15 @@ export const FavWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 0.75rem 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   border-radius: 3px;
   user-select: none;
   margin: 0.25rem 0;
+  border-radius: 4px;
   &:hover {
     background: rgba(0, 0, 0, 0.05);
+    color: #0080FF;
   }
   @media (min-width: 320px) and (max-width: 480px) {
     margin-left: 0.2rem;

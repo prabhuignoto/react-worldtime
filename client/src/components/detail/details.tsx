@@ -73,7 +73,7 @@ const Details: React.SFC<IDetail> = ({
         <Calendar />
       </Icon>
       <span>
-        We are in the <Mark>{ordinal(week_number)}</Mark> week of this year.
+        We are in the <Mark>{ordinal(week_number)}</Mark> week of this year
       </span>
     </Fact>
     <Fact>

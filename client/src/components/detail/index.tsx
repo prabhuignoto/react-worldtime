@@ -35,14 +35,19 @@ export default () => (
               timezoneState.state.activeTimezone ||
               mainState.state.defaultTimezone
           }}
-          // skip={timezoneState.state.activeTimezone === ""}
+          skip={
+            timezoneState.state.activeTimezone === "" &&
+            mainState.state.defaultTimezone === ""
+              ? true
+              : false
+          }
         >
           {({ loading, data, error }) => {
             let view = null;
             if (loading) {
               view = (
                 <Loading>
-                  <LoadingAnime />
+                  {/* <LoadingAnime /> */}
                 </Loading>
               );
             } else if (!loading && data) {
