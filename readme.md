@@ -1,6 +1,8 @@
 # react-worldtime
 
+![[Build Status][travis-url]][travis-url] ![[Maintainability][cc-url]][cc-image]
 > Know your Timezones better.
+
 
 ![app-front](app-front.png)
 
@@ -45,4 +47,7 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
+[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/prabhuignoto/react-worldtime.svg?branch=master
+[cc-image]: https://api.codeclimate.com/v1/badges/9bc39d56f41eb744b307/maintainability
+[cc-url]: https://codeclimate.com/github/prabhuignoto/react-worldtime/maintainability
