@@ -1,6 +1,6 @@
 # react-worldtime
 
-![[Build Status][travis-url]][travis-url] ![[Maintainability][cc-url]][cc-image]
+[![Build Status](https://travis-ci.org/prabhuignoto/react-worldtime.svg?branch=master)](https://travis-ci.org/prabhuignoto/react-worldtime) [![Maintainability](https://api.codeclimate.com/v1/badges/9bc39d56f41eb744b307/maintainability)](https://codeclimate.com/github/prabhuignoto/react-worldtime/maintainability)
 > Know your Timezones better.
 
 
