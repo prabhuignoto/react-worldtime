@@ -6,7 +6,8 @@ import gql from "graphql-tag";
 import * as React from "react";
 import Timezones from "../timezone/timezones";
 import styled from "styled-components";
-import {ReactComponent as LoadingSVG} from "../../assets/loading-2.svg"
+import { ReactComponent as LoadingSVG } from "../../assets/loading-2.svg";
+import MainState from "../common/mainState";
 
 const Loading = styled.div`
   padding: 1rem;
@@ -29,19 +30,29 @@ const query = gql`
 
 export default () => (
   // subscribe to region state change
-  <Subscribe to={[RegionState, TimezoneState]}>
-    {({ state }: RegionState, timeZoneState: TimezoneState) => (
+  <Subscribe to={[RegionState, TimezoneState, MainState]}>
+    {(
+      { state }: RegionState,
+      timeZoneState: TimezoneState,
+      mainState: MainState
+    ) => (
       // fetch the timezones via the query component
       <Query
         query={query}
-        variables={{ name: state.selectedRegion }}
+        variables={{
+          name: state.selectedRegion || mainState.state.defaultRegion
+        }}
         // skip={state.selectedRegion === ""}
         fetchPolicy={"cache-and-network"}
       >
         {({ loading, data, error }) => {
           let view = null;
           if (loading) {
-            view = <Loading><LoadingSVG /></Loading>;
+            view = (
+              <Loading>
+                <LoadingSVG />
+              </Loading>
+            );
           }
           if (!loading && data) {
             view = (

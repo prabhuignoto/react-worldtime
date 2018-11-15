@@ -47,8 +47,9 @@ export const SideBar = styled.section`
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #007FFE;
+    margin: 1rem 0;
   }
 `;
 
