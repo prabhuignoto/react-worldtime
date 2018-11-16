@@ -1,4 +1,5 @@
 import { PosedEntry, FavoriteWrapper } from "./sidebar-styles";
+import * as React from "react";
 
 interface IFavoriteEntry {
   name: string;
