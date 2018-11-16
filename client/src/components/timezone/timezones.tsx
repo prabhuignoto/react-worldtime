@@ -4,7 +4,6 @@ import {
   PosedListLabel,
   PosedListContainer,
   ListWrapper,
-  ListContainer,
   Searchbox,
   Icon
 } from "./timezones-styles";

@@ -6,36 +6,10 @@ import TimezoneState from "../timezone/timezoneState";
 import { Subscribe } from "unstated";
 import { ReactComponent as CloseSVG } from "../../assets/times-circle.svg";
 import {
-  PosedEntry,
   CloseIcon,
   PosedSidebar,
-  FavoriteWrapper
 } from "./sidebar-styles";
-
-interface IFavoriteEntry {
-  name: string;
-  handleSelection: (timezone: string) => void;
-}
-
-interface IFavorites {
-  favorites: string[];
-  handleSelection: (timezone: string) => void;
-}
-
-const FavoriteEntry: React.SFC<IFavoriteEntry> = ({
-  name,
-  handleSelection
-}) => <PosedEntry onClick={() => handleSelection(name)}>{name}</PosedEntry>;
-
-const Favorites: React.SFC<IFavorites> = ({ favorites, handleSelection }) => {
-  return (
-    <FavoriteWrapper>
-      {favorites.map((favorite: string) => (
-        <FavoriteEntry name={favorite} handleSelection={handleSelection}  key={favorite}/>
-      ))}
-    </FavoriteWrapper>
-  );
-};
+import Favorites from "./favorites";
 
 const Root: React.SFC<{}> = () => (
   <Subscribe to={[FavoriteState, SidebarState, RegionState, TimezoneState]}>

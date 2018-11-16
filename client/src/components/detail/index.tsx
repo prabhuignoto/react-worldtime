@@ -26,7 +26,6 @@ const query = gql`
 export default () => (
   <Subscribe to={[timezoneState, MainState]}>
     {(timezoneState: timezoneState, mainState: MainState) => {
-      console.log(timezoneState.state);
       return (
         <Query
           query={query}
@@ -47,7 +46,7 @@ export default () => (
             if (loading) {
               view = (
                 <Loading>
-                  {/* <LoadingAnime /> */}
+                  <LoadingAnime />
                 </Loading>
               );
             } else if (!loading && data) {

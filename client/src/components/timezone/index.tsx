@@ -42,7 +42,6 @@ export default () => (
         variables={{
           name: state.selectedRegion || mainState.state.defaultRegion
         }}
-        // skip={state.selectedRegion === ""}
         fetchPolicy={"cache-and-network"}
       >
         {({ loading, data, error }) => {

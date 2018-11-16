@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ListPosed } from "./regions-styles";
-import { IRegionsUI, IRegionUI } from "./IRegions";
+import { IRegionsUI } from "./IRegions";
 import Region from "./region";
 import TimezoneState from "../timezone/timezoneState";
 import { Subscribe } from "unstated";
