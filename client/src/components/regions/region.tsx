@@ -1,15 +1,17 @@
 import * as React from "react";
 import { Icon, ListItemPosed } from "./regions-styles";
-import Asia from "../../assets/asia.png";
-import AsiaBlue from "../../assets/asia-blue.png";
-import Africa from "../../assets/africas.png";
-import America from "../../assets/americas.png";
-import AmericaBlue from "../../assets/americas-blue.png";
-import AfricaBlue from "../../assets/africas-blue.png";
-import AustraliaBlue from "../../assets/australia-blue.png";
-import Europe from "../../assets/europe.png";
-import EuropeBlue from "../../assets/europe-blue.png";
-import Australia from "../../assets/australia.png";
+import {
+  Africa,
+  AfricaBlue,
+  America,
+  AmericaBlue,
+  Asia,
+  AsiaBlue,
+  Australia,
+  AustraliaBlue,
+  Europe,
+  EuropeBlue
+} from "../assets";
 import { IRegionUI } from "./IRegions";
 
 const Region: React.SFC<IRegionUI> = ({ name, handleSelection, selected }) => (
