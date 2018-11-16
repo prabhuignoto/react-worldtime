@@ -1,66 +1,41 @@
 import * as React from "react";
-import Styled from "styled-components";
 import { ReactComponent as Globe } from "../assets/globe.svg";
 import { ReactComponent as Bars } from "../assets/bars.svg";
 import { Subscribe } from "unstated";
 import SidebarState from "./sidebar/sidebarState";
-
-const Header = Styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 1rem;
-  height: 40px;
-  width: 100%;
-  @media (min-width: 320px) and (max-width: 480px) {
-    padding: 0rem;
-  }
-  @media (min-width: 768px) and (max-width: 1024px) {
-    padding: 1rem 0;
-  }
-  `;
-
-const Logo = Styled.i`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: relative;
-  margin-left: auto;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 500;
-`;
-
-const Icon = Styled.i`
-  width: 2rem;
-  height: 2rem;
-  display: block;
-  position: relative;
-  margin-left: 0.5rem;
-`;
-
-const Burger = Styled.i`
-  display: block;
-  width: 2rem;
-  height: 2rem;
-  position: relative;
-  align-self: flex-start;
-  cursor: pointer;
-  margin: 0.5rem;
-`;
+import MainState from "./common/mainState";
+import { Header, Burger, Logo, Icon, Home } from "./header-styles";
+import TimezoneState from "./timezone/timezoneState";
+import RegionState from "./regions/regionsState";
 
 export default () => (
   <Header>
-    <Subscribe to={[SidebarState]}>
-      {(stateCntr: SidebarState) => {
+    <Subscribe to={[SidebarState, MainState, TimezoneState, RegionState]}>
+      {(
+        stateCntr: SidebarState,
+        mainState: MainState,
+        tzoneState: TimezoneState,
+        regState: RegionState
+      ) => {
         return (
-          <Burger onClick={() => {
-            stateCntr.toggleSidebar();
-          }}>
-            <Bars />
-          </Burger>
+          <>
+            <Burger
+              onClick={() => {
+                stateCntr.toggleSidebar();
+              }}
+            >
+              <Bars />
+            </Burger>
+            <Home
+              onClick={() => {
+                regState.selectRegion("");
+                mainState.reset();
+                tzoneState.setActiveTimezone("");
+              }}
+            >
+              Switch to your Timezone
+            </Home>
+          </>
         );
       }}
     </Subscribe>

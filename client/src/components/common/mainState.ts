@@ -18,6 +18,15 @@ export default class MainState extends Container<{
   clearZone() {
     this.setState({
       defaultTimezone: ""
-    })
+    });
+  }
+
+  reset() {
+    this.setState({
+      defaultTimezone: DateTime.local().zoneName,
+      defaultRegion: <string>DateTime.local()
+        .zoneName.split("/")
+        .shift()
+    });
   }
 }

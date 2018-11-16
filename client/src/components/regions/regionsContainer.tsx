@@ -33,7 +33,6 @@ export default ({ defaultRegion}: IRegionContainer) => (
     ) => {
       let isFavoriteSelected = sidebarState.state.selectedFavorite;
       let selectedRegionInComp = stateContainer.state.selectedRegion;
-
       let regionSelected: string = (isFavoriteSelected
         .split("/")
         .shift() as string).toLowerCase();
