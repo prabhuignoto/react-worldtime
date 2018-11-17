@@ -49,7 +49,7 @@ export const Burger = Styled.i`
 export const Home = Styled.a`
   text-decoration: none;
   margin: 0.2rem 1rem 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   &:hover {

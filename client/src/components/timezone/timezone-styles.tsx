@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ListItem = styled.li<{nohover?: boolean}>`
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   display: flex;
   white-space: nowrap;
   text-align: left;

@@ -9,6 +9,9 @@ export const List = Styled.ul`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  @media (min-width: 320px) and (max-width: 480px) {
+    height: 100%;
+  }
 `;
 
 export const ListLabel = Styled.div`
@@ -64,10 +67,18 @@ export const ListContainer = Styled.div`
   box-shadow: 0 2px 10px 1px rgba(0,0,0,0.35);
   
   @media (min-width: 320px) and (max-width: 480px) {
-    top: 4rem;
+    top: 2rem;
     left: 0rem;
-    min-height: 150px;
-    max-height: 250px;
+    position: fixed;
+    /* height: 90vh; */
+    min-height: 90vh;
+    max-height: auto;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem 0;
   }
   @media (min-width: 768px) and (max-width: 1024px) {
     min-height: 300px;
