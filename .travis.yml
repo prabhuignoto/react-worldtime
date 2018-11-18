@@ -14,8 +14,9 @@ before_script:
 
 script:
   - cd ./client
-  - yarn run build
-  - yarn run test --coverage
+  - yarn install
+  - yarn build
+  - yarn test --coverage
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
