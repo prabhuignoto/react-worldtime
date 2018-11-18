@@ -1,0 +1,5 @@
+exclude_patterns:
+- "tests/"
+- "__tests__/"
+- "spec/"
+- "**/vendor/"
