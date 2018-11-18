@@ -3,7 +3,6 @@ env:
     - CC_TEST_REPORTER_ID=a137774f22014883ec8856cef3b185ca9b8852a07257628b540292e168b3b1eb
 language: node_js
 node_js:
-  - "node"
   - "8"
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -13,6 +12,6 @@ script:
   - cd ./client
   - yarn install
   - yarn run build
-  - yarn test --coverage
+  - yarn test -- --coverage
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

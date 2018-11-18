@@ -54,6 +54,9 @@
     "react-testing-library": "^5.2.3"
   },
   "jest": {
+    "watchPathIgnorePatterns": [
+      "/styles/"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}"
     ],
