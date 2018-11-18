@@ -55,11 +55,11 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "**/src/components/**"
+      "src/**/*.{js,jsx,ts,tsx}"
     ],
     "coverageReporters": [
       "json",
-      "html"
+      "text"
     ]
   }
 }
