@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/timezone/timezones.tsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">src/components/timezone</a> timezones.tsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/29</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import * as React from "react";</span>
+<span class="cstat-no" title="statement not covered" >import {</span>
+  List,
+  PosedListLabel,
+  PosedListContainer,
+  ListWrapper,
+  Searchbox,
+  Icon
+} from "./timezones-styles";
+<span class="cstat-no" title="statement not covered" >import Timezone from "./timezone";</span>
+import { ITimezonesUI, ITimezone, ITimezoneUI } from "./ITimezone";
+<span class="cstat-no" title="statement not covered" >import { Toggle, State } from "react-powerplug";</span>
+<span class="cstat-no" title="statement not covered" >import { ListItem } from "./timezone-styles";</span>
+import { FormEvent } from "react";
+import { stat } from "fs";
+<span class="cstat-no" title="statement not covered" >import { ReactComponent as AngleUp } from "../../assets/angle-up.svg";</span>
+<span class="cstat-no" title="statement not covered" >import { ReactComponent as AngleDown } from "../../assets/angle-down.svg";</span>
+<span class="cstat-no" title="statement not covered" >import SidebarState from "../sidebar/sidebarState";</span>
+<span class="cstat-no" title="statement not covered" >import { Subscribe } from "unstated";</span>
+&nbsp;
+const Timezones: React.SFC&lt;ITimezonesUI&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> zones, handleSelection }) =&gt; (</span>
+  // toggle power-plug
+<span class="cstat-no" title="statement not covered" >  &lt;Toggle&gt;</span>
+    {<span class="fstat-no" title="function not covered" >({</span> on, toggle }) =&gt; (
+      // state power-plug
+<span class="cstat-no" title="statement not covered" >      &lt;State</span>
+        initial={{ label: "Select a Timezone", localZones: zones.slice(0) }}
+      &gt;
+        {<span class="fstat-no" title="function not covered" >({</span> state, setState }) =&gt; {
+          // updates the selection made passes the value up the tree
+          const _handleSelection = (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >name: string) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (handleSelection) {</span>
+<span class="cstat-no" title="statement not covered" >              setState({</span>
+                label: name
+              });
+<span class="cstat-no" title="statement not covered" >              handleSelection(name);</span>
+<span class="cstat-no" title="statement not covered" >              toggle(</span>);
+            }
+          };
+          const filterSearch = (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >ev: FormEvent&lt;HTMLInputElement&gt;) =&gt; {</span></span>
+            const value = <span class="cstat-no" title="statement not covered" >ev.currentTarget.value;</span>
+<span class="cstat-no" title="statement not covered" >            console.log(value);</span>
+<span class="cstat-no" title="statement not covered" >            setState({</span>
+              localZones: zones.slice(0).filter((<span class="fstat-no" title="function not covered" >x: ITimezoneUI) =&gt; {</span>
+                let tester = <span class="cstat-no" title="statement not covered" >new RegExp(value, "ig").test(x.value);</span>
+<span class="cstat-no" title="statement not covered" >                return tester;</span>
+              })
+            });
+          };
+<span class="cstat-no" title="statement not covered" >          return (</span>
+            &lt;Subscribe to={[SidebarState]}&gt;
+              {(<span class="fstat-no" title="function not covered" >sidebarState: SidebarState) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;ListWrapper&gt;</span>
+                  {/* label */}
+                  &lt;PosedListLabel
+                    onClick={<span class="fstat-no" title="function not covered" >() =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >                      if (on) {</span>
+<span class="cstat-no" title="statement not covered" >                        setState({</span>
+                          localZones: zones.slice(0)
+                        });
+                      }
+<span class="cstat-no" title="statement not covered" >                      toggle(</span>);
+                    }}
+                  &gt;
+                    &lt;span&gt;{state.label}&lt;/span&gt;
+                    &lt;Icon&gt;{on ? &lt;AngleUp /&gt; : &lt;AngleDown /&gt;}&lt;/Icon&gt;
+                  &lt;/PosedListLabel&gt;
+                  {/* toggle the list control */}
+                  {on ? (
+                    // list content starts
+                    &lt;PosedListContainer pose={"open"} initialPose={"close"}&gt;
+                      &lt;List&gt;
+                        &lt;ListItem
+                          nohover
+                          style={{
+                            padding: "0.1rem 0rem",
+                            display: "flex",
+                            justifyContent: "center"
+                          }}
+                        &gt;
+                          &lt;Searchbox type="text" onInput={filterSearch} /&gt;
+                        &lt;/ListItem&gt;
+                        {/* render the Timezone items */}
+                        {state.localZones.map((<span class="fstat-no" title="function not covered" >zone: ITimezone) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                          &lt;Timezone</span>
+                            {...zone}
+                            handleSelection={_handleSelection}
+                          /&gt;
+                        ))}
+                      &lt;/List&gt;
+                    &lt;/PosedListContainer&gt;
+                  ) : null}
+                &lt;/ListWrapper&gt;
+              )}
+            &lt;/Subscribe&gt;
+            // list control starts
+          );
+        }}
+      &lt;/State&gt;
+    )}
+  &lt;/Toggle&gt;
+);
+&nbsp;
+export default Timezones;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Nov 18 2018 12:14:24 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>
