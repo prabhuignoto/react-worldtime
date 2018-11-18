@@ -24,8 +24,9 @@ const Region: React.SFC<IRegionUI> = ({ name, handleSelection, selected }) => (
     }}
     selected={selected}
     pose={"open"}
+    data-testid="region-test"
   >
-    <Icon>
+    <Icon className="region-icon">
       {name === "asia" ? (
         <img src={selected ? AsiaBlue : Asia} alt="Asia" />
       ) : null}
@@ -42,7 +43,7 @@ const Region: React.SFC<IRegionUI> = ({ name, handleSelection, selected }) => (
         <img src={selected ? AustraliaBlue : Australia} alt="Australia" />
       ) : null}
     </Icon>
-    <span>{name}</span>
+    <span className="region-name">{name}</span>
   </ListItemPosed>
 );
 

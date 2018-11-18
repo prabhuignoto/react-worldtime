@@ -18,7 +18,7 @@ const FavoriteEntry: React.SFC<IFavoriteEntry> = ({
 
 const Favorites: React.SFC<IFavorites> = ({ favorites, handleSelection }) => {
   return (
-    <FavoriteWrapper>
+    <FavoriteWrapper data-testid="sidbar-favorites-test">
       {favorites.map((favorite: string) => (
         <FavoriteEntry
           name={favorite}

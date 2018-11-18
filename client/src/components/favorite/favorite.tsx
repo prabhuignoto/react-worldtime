@@ -10,10 +10,11 @@ interface IFavorite {
 }
 
 const Favorite: React.SFC<IFavorite> = ({ isFavorite, handleSelection }) => (
-  <Toggle initial={isFavorite}>
+  <Toggle initial={isFavorite} >
     {({ on, toggle }) => {
       return (
         <FavWrapper
+          data-testid="favorite-test"
           onClick={() => {
             toggle();
             setTimeout(() => {
@@ -23,9 +24,9 @@ const Favorite: React.SFC<IFavorite> = ({ isFavorite, handleSelection }) => (
         >
           <Icon>{isFavorite ? <RedHeart /> : <PlainHeart />}</Icon>
           {isFavorite ? (
-            <span>Remove from your Favorites</span>
+            <span className="remove-fav-msg">Remove from your Favorites</span>
           ) : (
-            <span>Add this to your Favorites</span>
+            <span className="add-fav-msg">Add this to your Favorites</span>
           )}
         </FavWrapper>
       );

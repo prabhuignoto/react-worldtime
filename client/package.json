@@ -48,5 +48,18 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "jest-dom": "^2.1.1",
+    "react-testing-library": "^5.2.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/src/components/**"
+    ],
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
+  }
 }
