@@ -5,9 +5,7 @@ env:
 language: node_js
 
 node_js:
-  - "node"
-
-cache: yarn
+  - "8"
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -16,8 +14,8 @@ before_script:
 
 script:
   - cd ./client
-  - yarn build
-  - yarn test --coverage
+  - yarn run build
+  - yarn run test --coverage
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
