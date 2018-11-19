@@ -12,7 +12,6 @@ import { ITimezonesUI, ITimezone, ITimezoneUI } from "./ITimezone";
 import { Toggle, State } from "react-powerplug";
 import { ListItem } from "./timezone-styles";
 import { FormEvent } from "react";
-import { stat } from "fs";
 import { ReactComponent as AngleUp } from "../../assets/angle-up.svg";
 import { ReactComponent as AngleDown } from "../../assets/angle-down.svg";
 import SidebarState from "../sidebar/sidebarState";

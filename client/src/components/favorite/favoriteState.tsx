@@ -10,21 +10,27 @@ export default class FavoriteState extends Container<{ favorites: string[] }> {
     };
   }
 
-  addFavorite(timezone: string) {
+  addFavorite(timezone: string, cb?: () => void) {
     let timezones = this.state.favorites;
     timezones.push(timezone);
-    this.setState({
-      favorites: timezones.slice(0)
-    });
+    this.setState(
+      {
+        favorites: timezones.slice(0)
+      },
+      cb
+    );
     Store.set("react-worldtime", timezones);
   }
 
-  removeFavorite(timezone: string) {
+  removeFavorite(timezone: string, cb?: () => void) {
     let timezones = this.state.favorites;
     remove(timezones, x => x === timezone);
-    this.setState({
-      favorites: timezones
-    });
+    this.setState(
+      {
+        favorites: timezones
+      },
+      cb
+    );
     Store.set("react-worldtime", timezones);
   }
 }

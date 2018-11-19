@@ -17,9 +17,9 @@ export default class RegionState extends Container<IRegionState> {
     };
   }
 
-  selectRegion(name: string) {
+  selectRegion(name: string, cb?: () => void) {
     this.setState({
       selectedRegion: name
-    });
+    }, cb);
   }
 }

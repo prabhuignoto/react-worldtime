@@ -12,9 +12,9 @@ export default class LoadingState extends Container<{
     };
   }
 
-  setTimezonesLoading(status: boolean) {
+  setTimezonesLoading(status: boolean, cb?: () => void) {
     this.setState({
       isTimezonesLoading: status
-    });
+    }, cb);
   }
 }
