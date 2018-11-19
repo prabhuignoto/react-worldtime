@@ -1,84 +1,19 @@
 import * as React from "react";
-import Styled from "styled-components";
 import { ReactComponent as Twitter } from "../assets/twitter.svg";
 import { ReactComponent as Github } from "../assets/github.svg";
 import { ReactComponent as Heart } from "../assets/heart.svg";
-
-const Footer = Styled.footer`
-  /* height: 50px; */
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  margin-top: auto;
-  flex-wrap: wrap;
-  @media (min-width: 320px) and (max-width: 480px) {
-    padding: 1rem 0;
-  }
-  @media (min-width: 768px) and (max-width: 1024px) {
-    /* position: fixed;
-    bottom: 0;
-    left: 0;
-    padding: 1rem 0;
-    padding-right: 1rem; */
-  }
-`;
-
-const Social = Styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-`;
-
-const SocialLink = Styled.li`
-  width: 1.2rem;
-  height: 1.2rem;
-  margin: 0 0.75rem;
-
-  a {
-    width: 1.5rem;
-    height: 1.5rem;
-    position: relative;
-    display: block;
-  }
-`;
-
-const Copyright = Styled.div`
-  font-size: 0.9rem;
-  @media (min-width: 320px) and (max-width: 480px) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @media (min-width: 768px) and (max-width: 1024px) {
-    margin-right: 2rem;
-  }
-  `;
-
-const Icon = Styled.i`
-  display: block;
-  width: 1rem;
-  height: 1rem;
-  position: relative;
-  margin-left: 0.25rem;
-  `;
-
-const Design = Styled.div`
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-left: auto;
-  margin-right: 2rem;
-`;
+import {
+  Copyright,
+  Design,
+  Footer,
+  Icon,
+  Social,
+  SocialLink
+} from "./footer-styles";
 
 export default () => (
-  <Footer>
-    <Social>
+  <Footer data-testid="footer-test">
+    <Social className="footer-social">
       <SocialLink>
         <a href="https://twitter.com/prabhumurthy2" target="new">
           <Twitter />
@@ -90,7 +25,7 @@ export default () => (
         </a>
       </SocialLink>
     </Social>
-    <Design>
+    <Design className="footer-design">
       <span>Designed & Developed with</span>{" "}
       <Icon>
         <Heart />
