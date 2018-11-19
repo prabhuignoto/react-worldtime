@@ -7,6 +7,9 @@ language: node_js
 node_js:
   - "8"
 
+install:
+  - yarn install
+
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
@@ -14,7 +17,6 @@ before_script:
 
 script:
   - cd ./client
-  - yarn install
   - yarn build
   - yarn test --coverage
 
