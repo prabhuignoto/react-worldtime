@@ -12,15 +12,15 @@ export default class SidebarState extends Container<{
     };
   }
 
-  toggleSidebar() {
+  toggleSidebar(cb?: () => void) {
     this.setState({
       isOpen: !this.state.isOpen
-    });
+    }, cb);
   }
 
-  setFavorite(timezone: string) {
+  setFavorite(timezone: string, cb?: () => void) {
     this.setState({
       selectedFavorite: timezone
-    });
+    }, cb);
   }
 }

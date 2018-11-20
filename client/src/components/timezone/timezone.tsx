@@ -8,6 +8,7 @@ const Timezone: React.SFC<ITimezoneUI> = ({
   handleSelection
 }) => (
   <ListItem
+    data-testid="timezone-test"
     onClick={() => {
       if(handleSelection) {
         handleSelection(value);

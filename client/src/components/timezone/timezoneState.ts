@@ -14,15 +14,16 @@ export default class TimezoneState extends Container<ITimezoneState> {
     };
   }
 
-  setActiveTimezone(timezone: string) {
+  setActiveTimezone(timezone: string, cb?: () => void) {
     this.setState({
       activeTimezone: timezone
-    });
+    }, cb);
   }
 
-  updateLoadingStatus(status: boolean) {
+  updateLoadingStatus(status: boolean, cb?: () => void) {
     this.setState({
       isLoadingData: status
-    });
+    }, cb);
   }
 }
+  
