@@ -4,8 +4,9 @@ import "jest-dom/extend-expect";
 import Timezone from "../components/timezone/timezone";
 
 const handleSelection = jest.fn();
+const handleSelectionNull = undefined;
 
-const {getByTestId} = render(
+const {getByTestId, rerender} = render(
   <Timezone
     displayName="Asia/Calcutta"
     value="Asia/Calcutta"
@@ -26,4 +27,14 @@ it("Check if the value is rendered as expected", () => {
 it("Check if handler works as expected", () => {
   fireEvent.click(container);
   expect(handleSelection).toBeCalled();
-})
+});
+
+it("Check when handleselection is not passed", () => {
+  rerender(<Timezone
+    displayName="Asia/Calcutta"
+    value="Asia/Calcutta"
+    handleSelection={handleSelectionNull}
+  />);
+  expect(container).not.toBeNull();
+  fireEvent.click(container);
+});

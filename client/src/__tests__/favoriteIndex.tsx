@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, fireEvent } from "react-testing-library";
+import { render, fireEvent, RenderResult } from "react-testing-library";
 import "jest-dom/extend-expect";
 import FavoriteIndex from "../components/favorite";
 import { Provider } from "unstated";
@@ -8,9 +8,9 @@ import TimezoneState from "../components/timezone/timezoneState";
 
 const favState = new FavoriteState();
 const tzState = new TimezoneState();
-tzState.setActiveTimezone("Asia/Singapore");
-
-const { container } = render(
+// tzState.setActiveTimezone("Asia/Singapore");
+ 
+const { container }: { container: HTMLElement} = render(
   <Provider inject={[favState, tzState]}>
     <FavoriteIndex />
   </Provider>
