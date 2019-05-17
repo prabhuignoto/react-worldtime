@@ -25,13 +25,13 @@ ID = "react-worldtime"
 [context.production]
   publish = "client/build/"
   command = "yarn build"
-  environment = { REACT_APP_API_GRAPHQL_URL = "https://react-worldtime.herokuapp.com/graphql" }
+  environment = { REACT_APP_API_GRAPHQL_URL = "https://react-world-time.herokuapp.com/graphql" }
 
 # Deploy Preview context: all deploys resulting from a pull/merge request will 
 # inherit these settings.
 [context.deploy-preview]
   publish = "build/"
-  environment = { REACT_APP_API_GRAPHQL_URL = "https://react-worldtime.herokuapp.com/graphql"}
+  environment = { REACT_APP_API_GRAPHQL_URL = "https://react-world-time.herokuapp.com/graphql"}
 
 # Here is another way to define context specific environment variables.
 # [context.deploy-preview.environment]
